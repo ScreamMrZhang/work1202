@@ -9,11 +9,11 @@
 </body>
 <script>
     function dayOfYear(dateStr) {
-        const date = new Date(dateStr);
+        var date = new Date(dateStr);
 
-        const startOfYear = new Date(date.getFullYear(), 0, 0); // 获取当年第一天
-        const diff = date - startOfYear; // 计算与第一天的差值
-        const oneDay = 1000 * 60 * 60 * 24; // 一天的毫秒数
+        var startOfYear = new Date(date.getFullYear(), 0, 0); // 获取当年第一天
+        var diff = date - startOfYear; // 计算与第一天的差值
+        var oneDay = 1000 * 60 * 60 * 24; // 一天的毫秒数
 
         return Math.floor(diff / oneDay); // 返回日期是当年中的第几天
     }
