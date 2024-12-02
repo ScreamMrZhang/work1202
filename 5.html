@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张泽宣第五题</title>
+</head>
+<body>
+<h1>第5题</h1>
+</body>
+<script>
+    function weekOfYear(dateStr) {
+        var date = new Date(dateStr);
+
+        // 获取年份
+        var year = date.getFullYear();
+
+        // 获取该年最后一天的日期，12月31日
+        var lastDayOfYear = new Date(year, 11, 31); // 12月31日，月份从0开始
+
+        // 计算该年第一天的星期
+        var firstDayOfYear = new Date(year, 0, 1);
+
+        // 获取最后一天的周数
+        var lastWeek = Math.ceil((lastDayOfYear - firstDayOfYear) / (1000 * 60 * 60 * 24 * 7));
+
+        return lastWeek;
+    }
+
+    // 示例
+    console.log(weekOfYear("2024/12/1")); // 53
+
+</script>
+</html>

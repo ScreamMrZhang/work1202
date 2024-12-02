@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张泽宣第1题</title>
+</head>
+<body>
+<h1>第一题</h1>
+</body>
+<script>
+    function add(amount, unit, baseTime) {
+        if (arguments.length<3)
+            baseTime=Date.now();
+
+        // 处理传入的 baseTime，如果是字符串则转为日期对象
+        if (typeof baseTime === 'string') {
+            baseTime = new Date(baseTime).getTime();
+        }
+
+        switch (unit) {
+            case 'day':
+                baseTime = new Date(baseTime + amount * 24 * 60 * 60 * 1000);
+                break;
+            case 'week':
+                baseTime = new Date(baseTime + amount * 7 * 24 * 60 * 60 * 1000);
+                break;
+            case 'hour':
+                baseTime = new Date(baseTime + amount * 60 * 1000);
+                break;
+            case 'minute':
+                baseTime = new Date(baseTime + amount * 60 * 1000);
+                break;
+            case 'second':
+                baseTime = new Date(baseTime + amount * 1000);
+                break;
+            case 'millisecond':
+                baseTime = new Date(baseTime + amount);
+                break;
+            default:
+                return 'Invalid unit';
+        }
+
+        var newTime = new Date(baseTime);
+        var y = newTime.getFullYear();
+        var m = newTime.getMonth()+1;
+        var d = newTime.getDate();
+        var hh = newTime.getHours();
+        var mm = newTime.getMinutes();
+        var ss = newTime.getSeconds();
+
+        var strTime = y+"-"+m+"-"+d+" "+hh+":"+mm+":"+ss;
+        return strTime;
+    }
+
+    // 示例
+    console.log(add(7, "day")); // 当前时间加7天
+    console.log(add(7, "day", "2024/10/8 12:00:23")); // 指定时间加7天
+    console.log(add(18, "week", "2024/10/8 12:00:23")); // 指定时间加18周
+
+
+
+</script>
+</html>

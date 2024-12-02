@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function isTomorrow(dateStr) {
+        const date = new Date(dateStr);
+        const today = new Date();
+
+        // 清除时间部分，只比较日期
+        today.setHours(0, 0, 0, 0);
+
+        // 将今天的日期加一天
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+
+        // 清除参数日期的时间部分
+        date.setHours(0, 0, 0, 0);
+
+        return date.getTime() === tomorrow.getTime(); // 判断日期是否相同
+    }
+
+    // 示例
+    console.log(isTomorrow("2024/12/27")); // false
+    console.log(isTomorrow("2024/12/3"));  // true
+
+</script>
+</html>

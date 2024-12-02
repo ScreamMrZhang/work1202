@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张泽宣第三题</title>
+</head>
+<body>
+<h1>第三题</h1>
+</body>
+<script>
+    function isBetween(dateStr, startStr, endStr) {
+        var date = new Date(dateStr);
+        var start = new Date(startStr);
+        var end = new Date(endStr);
+
+        // 如果传入的日期无效，返回 false
+        if (isNaN(date) || isNaN(start) || isNaN(end)) return false;
+
+        return date > start && date < end; // 判断是否在区间内
+    }
+
+    // 示例
+    console.log(isBetween("2010-10-20", "2010-10-19", "2010-10-25")); // true
+    console.log(isBetween("2010-10-20", "2010-10-21", "2010-10-25")); // false
+    console.log(isBetween("2010-10-20", "2010-10-20", "2010-10-20")); // false
+
+</script>
+</html>

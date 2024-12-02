@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>张泽宣第2题</title>
+</head>
+<body>
+<h2>第二题</h2>
+</body>
+<script>
+    function dayOfYear(dateStr) {
+        const date = new Date(dateStr);
+
+        const startOfYear = new Date(date.getFullYear(), 0, 0); // 获取当年第一天
+        const diff = date - startOfYear; // 计算与第一天的差值
+        const oneDay = 1000 * 60 * 60 * 24; // 一天的毫秒数
+
+        return Math.floor(diff / oneDay); // 返回日期是当年中的第几天
+    }
+
+    // 示例
+    console.log(dayOfYear("2010-01-01")); // 1
+    console.log(dayOfYear("2024-10-08")); // 282
+
+</script>
+</html>
