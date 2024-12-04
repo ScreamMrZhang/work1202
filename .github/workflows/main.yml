@@ -23,5 +23,4 @@ jobs:
         port: 22
         source: "../*.html"
         target: ${{ secrets.SERVER_TARGET }}
-        #password: ${{ secrets.SERVER_PASSWORD }}
         
