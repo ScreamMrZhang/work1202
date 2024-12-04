@@ -20,8 +20,8 @@ jobs:
         host: ${{ secrets.SERVER_IP }}
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.PRIVATE_KEY }}
-        password: ${{ secrets.SERVER_PASSWORD }}
         port: 22
         source: "../*.html"
         target: ${{ secrets.SERVER_TARGET }}
+        #password: ${{ secrets.SERVER_PASSWORD }}
         
