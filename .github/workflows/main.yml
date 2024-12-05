@@ -1,4 +1,4 @@
-name: Deploy to Docker Nginx
+name: Deploy1202 to Docker Nginx
 
 on:
   push:
